@@ -1,7 +1,9 @@
-package com.hikariardhiansya_19102105.myproject
+package com.HikariArdhiansya_19102105.lifecycleapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 
 class HalamanDuaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,4 +38,5 @@ class HalamanDuaActivity : AppCompatActivity() {
         Log.d("ActivityState",msg)
         Toast.makeText(applicationContext,msg, Toast.LENGTH_SHORT).show()
     }
+
 }

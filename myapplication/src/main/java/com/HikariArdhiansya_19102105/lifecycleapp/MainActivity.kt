@@ -1,22 +1,26 @@
-package com.hikariardhiansya_19102105.myproject
+package com.HikariArdhiansya_19102105.lifecycleapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnPage.setOnClickListener{
+            val intent = Intent(this, HalamanDuaActivity::class.java)
+            startActivity(intent)
+        }
     }
     fun printState(msg: String){
         Log.d("ActivityState",msg)
         Toast.makeText(applicationContext,msg, Toast.LENGTH_SHORT).show()
-    }
-    override fun onStart(){
+    }override fun onStart(){
         super.onStart()
         printState("Halaman satu On Start")
     }
@@ -40,4 +44,6 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         printState("Halaman satu On Destroy")
     }
+
+
 }
