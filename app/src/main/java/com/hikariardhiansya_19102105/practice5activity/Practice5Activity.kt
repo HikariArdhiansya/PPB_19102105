@@ -16,30 +16,30 @@ class Practice5Activity : AppCompatActivity() {
 
     val CALL_REQUEST_CODE = 100
     @SuppressLint("MissingPermission")
-    private fun setupPermissions() {
-        val permission = ContextCompat.checkSelfPermission(this,
-            Manifest.permission.CALL_PHONE)
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.CALL_PHONE),
-                CALL_REQUEST_CODE)
-        }
-    }
+//    private fun setupPermissions() {
+//        val permission = ContextCompat.checkSelfPermission(this,
+//            Manifest.permission.CALL_PHONE)
+//        if (permission != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this,
+//                arrayOf(Manifest.permission.CALL_PHONE),
+//                CALL_REQUEST_CODE)
+//}
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_practice5)
-        setupPermissions()
-        btnProdi.setOnClickListener{
-            val namaProdi = inputProdi.text.toString()
-            if (namaProdi.isEmpty()) {
-                inputProdi.error = "Prodi Tidak Boleh Kosong"
-                return@setOnClickListener
-            }
-            val moveWithDataIntent = Intent(this@Practice5Activity, Practice5ReadDataActivity::class.java)
-            moveWithDataIntent.putExtra(Practice5ReadDataActivity.EXTRA_PRODI, namaProdi)
-            startActivity(moveWithDataIntent)
-        }
+//        setupPermissions()
+//        btnProdi.setOnClickListener{
+//            val namaProdi = inputProdi.text.toString()
+//            if (namaProdi.isEmpty()) {
+//                inputProdi.error = "Prodi Tidak Boleh Kosong"
+ //               return@setOnClickListener
+  //          }
+//            val moveWithDataIntent = Intent(this@Practice5Activity, Practice5ReadDataActivity::class.java)
+//            moveWithDataIntent.putExtra(Practice5ReadDataActivity.EXTRA_PRODI, namaProdi)
+//            startActivity(moveWithDataIntent)
+ //       }
         btnCallBrowser.setOnClickListener{
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("http://ittelkom-pwt.ac.id/")
